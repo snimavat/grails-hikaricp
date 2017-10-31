@@ -15,14 +15,8 @@ class BookController {
 	DataSource dataSource
 
 	def index() {
-		Connection c = dataSource.getConnection()
 		Book book = new Book(name: String.valueOf(System.currentTimeMillis()))
 		book.save(flush:true)
-
-		Sql sql = new Sql(c)
-		sql.eachRow("select * from Bookx", {
-			println it
-		})
 		render book as JSON
 	}
 }
