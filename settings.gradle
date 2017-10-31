@@ -1,0 +1,9 @@
+rootProject.name='HikariCP-root'
+
+
+include 'plugin'
+findProject(':plugin').name = 'HikariCP'
+
+include 'test-projects/app'
+findProject(':test-projects/app').name = 'test-app'
+
